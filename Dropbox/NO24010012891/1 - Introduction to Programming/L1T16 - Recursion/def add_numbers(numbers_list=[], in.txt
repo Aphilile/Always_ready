@@ -1,0 +1,15 @@
+def add_numbers(numbers_list=[],* index_num):
+    #print(numbers_list)
+    #print(*index_num)
+    #print(int(number_list[0]))
+    
+    num=0
+    total=0
+    while num < 5:
+        for x in range(0,5):
+            total = total + numbers_list[int(x)]
+            num += 1
+            print(f'num1 {num}')
+        print(f'total of the list is {total}')
+        
+add_numbers([12,4,5,7,11,56],5)

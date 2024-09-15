@@ -1,0 +1,80 @@
+Algorithm 1: Find the Largest Number
+
+Set largestNumber to 0
+
+Repeat:
+    Prompt user for a positive number (Enter 0 to finish)
+    Read userInput
+    If userInput is greater than largestNumber:
+        Set largestNumber to userInput
+Until userInput is 0
+
+If largestNumber is greater than 0:
+    Print "The largest number entered is " + largestNumber
+Else:
+    Print "No positive number was entered"
+
+Algorithm 2: Greet the User
+
+Prompt user for their name
+Read userName
+assign userName to first_name
+ Print "Hello, World" + first_name
+
+Algorithm 3: Calculate Average
+
+Set average to 0
+Set sum to 0
+Set count to 0
+
+Repeat:
+    Prompt user for an integer (Enter 0 to finish)
+    Read userInput
+    If userInput is not 0:
+        Add userInput to sum
+        Increment count
+Until userInput is 0
+
+If count is greater than 0:
+    Set average to sum divided by count
+    Print "The average of the entered numbers is " + average
+Else:
+    Print "No numbers were entered"
+
+Algorithm 4: Manage Grocery List
+
+Create an empty list called groceryList
+
+Repeat:
+    Prompt user for a grocery item (Enter 'done' to finish)
+    Read userInput
+    If userInput is not "done":
+        Add userInput to groceryList
+Until userInput is "done"
+
+Sort groceryList alphabetically
+
+If size of groceryList is greater than 0:
+    Print "Items to buy:"
+    For each item in groceryList:
+        Print item
+Else:
+    Print "No items to buy"
+
+Algorithm 5: 
+ Set S to 0
+ Set A to 0
+ Set P to 0
+ Set X to 0
+ Set Y to 0
+
+ prompt the user to enter X,Y
+  S equal to X plus Y
+  A equal to S divided by 2
+  P equal to X multiply by Y
+output S,A,P
+
+
+
+  
+    

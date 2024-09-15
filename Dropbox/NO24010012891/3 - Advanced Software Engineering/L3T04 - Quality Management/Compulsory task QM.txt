@@ -1,0 +1,60 @@
+-Quality Standards for Real-World Products
+
+1. Mobile Game App
+Performance: The game should run smoothly without lag, with quick load times and efficient use of device resources (CPU, GPU, memory).
+User Experience (UX): An engaging, intuitive interface with responsive controls, high-quality graphics, and sound.
+Compatibility: Support across various devices and operating systems (iOS, Android).
+Security: Protection against cheating/hacking, secure in-app purchases, and safeguarding user data.
+Updates: Regular updates for bug fixes, new features, and compatibility with new OS versions.
+
+2. Banking Application
+Security: Strong encryption, secure authentication methods (e.g., multi-factor authentication), and fraud protection.
+Reliability: High uptime and consistent performance under various loads.
+Compliance: Adherence to financial regulations and standards (e.g., PCI DSS, GDPR).
+Usability: User-friendly interface with clear navigation and accessible features.
+Performance: Fast transaction processing and quick response times.
+
+3. Database for a Medical Organization
+Data Integrity: Accurate and reliable data storage and retrieval, prevention of data corruption.
+Security: Robust protection of patient data confidentiality (e.g., HIPAA compliance) and secure access controls.
+Scalability: Ability to handle increasing amounts of data and users.
+Availability: High availability and disaster recovery plans.
+Interoperability: Compatibility with other healthcare systems for data exchange.
+
+-High-Quality Software Processes Leading to High-Quality Products
+
+.A high-quality software process typically leads to high-quality software products because it incorporates structured methodologies, thorough testing, and continuous          improvement. This approach ensures that:
+
+a).Requirements are well-defined: Understanding user needs and expectations reduces the risk of developing features that don’t meet user requirements.
+
+b).Systematic testing: Regular testing at different stages (unit, integration, system) helps identify and fix defects early.
+c).Documentation and standards: Clear documentation and adherence to coding standards maintain consistency and reduce errors.
+
+d).Feedback loops: Continuous feedback from users and stakeholders ensures that the product evolves to meet real-world needs.
+ Potential Problems with Quality Management Systems
+
+e).Overhead and bureaucracy: Strict adherence to processes can slow down development and reduce flexibility.
+
+f).False sense of security: Relying solely on process quality might overlook practical issues in the software.
+g).Resistance to change: Developers might resist adopting new processes, especially if they find them cumbersome or unnecessary.
+
+-Program Inspections for Discovering Errors
+-Program inspections are effective because:
+
+i).Manual Review: Experienced developers review code to identify logical errors, design flaws, and compliance with standards.
+ii).Collaboration: Team-based inspections foster knowledge sharing and multiple perspectives on potential issues.
+iii).Early Detection: Inspections can catch issues before they become costly to fix during later stages of development.
+    However, inspections might not uncover:
+
+iv).Runtime Errors: Issues that only manifest under specific conditions during execution, such as memory leaks or race conditions.
+v).Performance Problems: Slowdowns or inefficiencies that only become apparent under load.
+vi).Usability Issues: User interface problems that require user interaction to identify.
+
+-Difficulty in Validating Internal and External Attribute Relationships
+-Validating the relationship between internal and external attributes is challenging because:
+
+a).Complexity of Metrics: Internal metrics (e.g., code complexity, cohesion) may not directly correlate with external quality attributes (e.g., usability,  reliability).
+b).Context Dependence: The impact of internal attributes on external qualities can vary depending on the application context and user interactions.
+
+c).Dynamic Factors: External attributes are often influenced by factors beyond the code itself, such as user behavior, system environment, and real-world usage patterns.
+d).Measurement Challenges: Accurately measuring both internal and external attributes in a consistent and reliable manner is difficult.

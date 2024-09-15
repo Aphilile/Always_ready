@@ -1,0 +1,14 @@
+
+
+# Import the required libraries
+from wifi_qrcode_generator import wifi_qrcode
+
+# Generate the Wi-Fi QR code
+qr_code = wifi_qrcode(ssid="clcoding", hidden=False, authentication_type="WPA", password="Cl2024")
+
+# Create an image of the QR code
+qr_code_img = qr_code.make_image()
+
+# Save the QR code as an image file
+qr_code_img.save("wifi_qr_code.png")
+

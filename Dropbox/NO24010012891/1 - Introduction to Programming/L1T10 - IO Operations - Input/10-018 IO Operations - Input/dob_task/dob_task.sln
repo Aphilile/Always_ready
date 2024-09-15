@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "dob_task", "dob_task\dob_task.pyproj", "{39186255-0BDC-4B51-86F4-64AA9A9C77BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39186255-0BDC-4B51-86F4-64AA9A9C77BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39186255-0BDC-4B51-86F4-64AA9A9C77BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A435A087-2E50-441E-B135-34DC93CE3CC2}
+	EndGlobalSection
+EndGlobal

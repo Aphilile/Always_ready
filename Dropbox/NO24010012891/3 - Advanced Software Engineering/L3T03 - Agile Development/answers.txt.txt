@@ -1,0 +1,29 @@
+answers.txt
+
+How does the waterfall methodology differ from agile?
+
+The waterfall methodology is a linear and sequential approach to software development, where each phase (requirements, design, implementation, testing, deployment, maintenance) must be completed before the next phase begins. This approach is rigid and assumes that all requirements can be defined upfront and will not change. In contrast, agile methodology is iterative and incremental, allowing for flexibility and adaptability throughout the development process. Agile emphasizes continuous feedback, collaboration, and iterative development cycles (sprints) where requirements can evolve based on ongoing feedback and changing needs.
+
+Reread "agile manifesto" can you think of a situation in which one or more of the four "values" could get a software team into trouble?
+
+The Agile Manifesto values are:
+
+-Individuals and interactions over processes and tools
+-Working software over comprehensive documentation
+-Customer collaboration over contract negotiation
+-Responding to change over following a plan
+
+One potential situation where these values might cause trouble is when a team prioritizes "individuals and interactions" to the point of neglecting necessary documentation. For instance, if a team focuses excessively on personal interactions and informal communication, they might end up with inadequate documentation, leading to misunderstandings and inconsistent implementation of features. Similarly, prioritizing "responding to change" over "following a plan" might result in frequent scope changes, leading to project delays and difficulty in meeting deadlines.
+
+Describe the agile method in your own words.
+
+The agile method is a flexible and collaborative approach to software development that focuses on delivering small, workable segments of the product frequently. It involves breaking the project into smaller iterations or sprints, each delivering a functional piece of the software. Agile encourages regular feedback from stakeholders, continuous improvement, and adaptability to changing requirements. It values teamwork, communication, and responding to feedback over strictly following a predefined plan.
+
+Why do you think requirements change so much?
+
+Requirements change frequently due to various factors, such as evolving business needs, market conditions, technological advancements, and user feedback. As development progresses, stakeholders may gain new insights or encounter unforeseen issues, prompting adjustments to the initial requirements. Additionally, changes in the competitive landscape or shifts in user preferences can drive the need for updates to ensure the software remains relevant and effective.
+
+Explain why first testing project features helps the programmer to develop a better understanding of the system's requirements.
+
+Testing project features early in the development process helps programmers gain a clearer understanding of the system's requirements by providing immediate feedback on whether the implemented features meet the expected criteria. It allows programmers to identify and address issues or misunderstandings about the requirements before they become more significant problems. Early testing also helps in refining the requirements based on practical insights gained during implementation, leading to a more accurate and aligned development process.
+

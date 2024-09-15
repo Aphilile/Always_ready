@@ -1,0 +1,33 @@
+'''
+    elif options == "va":
+      with open('tasks.txt', 'r') as tasks_file:
+      lines = tasks_file.readlines()
+      for topics in lines:
+           print(format_data(topics))  
+                       option()   
+    elif options == "vm":
+
+          # To revist and maybe rewrite it
+
+       username = input("Enter username: ")
+       user_tasks = filter_tasks_by_user(username)
+    if user_tasks:
+    for task in user_tasks:
+        print(task)
+        
+                option() 
+    else:
+        print("No tasks found for the logged-in user.")
+    elif options == "e":
+        print("Thank you and goodbyeee :) !")
+            
+    else:
+
+       print(f"Incorrect option selected\n")
+            option()      
+
+def login ():
+
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+ '''   

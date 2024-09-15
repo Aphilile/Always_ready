@@ -1,0 +1,21 @@
+        
+if options == 'vm':
+        pass       
+with open('task.txt', 'r') as file:
+    tasks = [line.strip() for line in file]
+ 
+for task in tasks:
+    username, title, description, due_date = task.split(',')
+    if username == current_user:
+        print(f"Task Title: {title}")
+        print(f"Description: {description}")
+        print(f"Due Date: {due_date}\n")
+        
+    elif options == 'e':
+        print('Goodbye!!!')
+        exit()
+
+    else:
+        print("You have entered an invalid input. Please try again")
+    
+   

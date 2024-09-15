@@ -1,0 +1,9 @@
+mkdir Remember
+mkdir New_balance
+mkdir New_day
+cd Remember
+mkdir Remember_one
+mkdir Remember_two
+mkdir Remember_three
+del Remember_one
+del Remember_three

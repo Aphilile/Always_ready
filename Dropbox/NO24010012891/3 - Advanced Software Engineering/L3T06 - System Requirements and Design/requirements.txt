@@ -1,0 +1,63 @@
+***Ambiguities and Omissions***
+
+[User Interface Details:]
+-The requirements do not specify how the user interacts with the system. Is it a touchscreen, physical buttons, or voice commands?
+
+[Error Handling:]
+-What happens if the credit card is invalid? How many attempts are allowed for entering the personal identifier? Is there a timeout for user inactivity?
+
+[Security Measures:]
+-How is the personal identification number handled and stored? What encryption standards are used for credit card information?
+
+[Payment Processing:]
+-Which payment processors or gateways are supported? How are transaction errors or declines managed?
+
+[Ticket Issuance:]
+-How is the ticket delivered to the user? Is it a physical ticket printed on the spot, or a digital ticket sent via email or SMS?
+
+[System Maintenance:]
+-What procedures are in place for system updates, backups, and recovery?
+
+[Accessibility:]
+-Are there provisions for users with disabilities? Is the system compatible with assistive technologies?
+
+[Scalability and Performance:]
+-How many transactions can the system handle simultaneously? What is the expected response time for each transaction?
+
+
+***Non-Functional Requirements****
+
+[Performance:]
+-The system should process a transaction, from the start button press to ticket issuance, within 30 seconds under normal operating conditions.
+The system should handle up to 100 simultaneous transactions without degradation in performance.
+
+[Reliability:]
+-The system should have an uptime of 99.9% over a year.
+The system should be able to recover from failures within 5 minutes.
+
+[Security:]
+-All credit card transactions should comply with the Payment Card Industry Data Security Standard (PCI DSS).
+-Personal identification numbers should be encrypted using AES-256 encryption.
+-The system should log all access and transactions for audit purposes and store logs securely for at least one year.
+
+[Usability:]
+-The user interface should be intuitive and accessible, with clear instructions at each step of the process.
+-The system should support multiple languages, including English, Spanish, and French.
+-The system should be operable by users with disabilities, complying with the Web Content Accessibility Guidelines (WCAG) 2.1.
+
+[Maintainability:]
+-The system should be modular to facilitate updates and maintenance.
+-System updates should not require more than 30 minutes of downtime.
+-Documentation should be provided for all system components and processes.
+
+[Scalability:]
+-The system should be designed to scale up to support future expansion, allowing for an increase in the number of transactions by 200% without significant re-engineering.
+-The system should support integration with additional payment gateways as required.
+
+[Compatibility:]
+-The system should be compatible with major operating systems, including Windows, macOS, and Linux.
+-The system should support integration with existing rail ticketing infrastructure and third-party applications.
+
+[Support and Training:]
+-Comprehensive training materials should be provided for system operators.
+-A helpdesk or support service should be available 24/7 to assist with any issues that arise.

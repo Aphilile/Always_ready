@@ -1,0 +1,63 @@
+
+with open('user.txt') as file_with_username_password:
+    while True:
+        line = file_with_username_password.readline()
+        if not line:
+            break
+        print(line.strip())
+
+while True:
+    # Present the menu to the user and make sure that the user input is converted to lowercase.
+    options= input("Select one of the following options: ")
+    register_the_user = "r"
+    add_task = "a"
+    view_all_tasks = "va"
+    view_my_task = "vm"
+    exit_options = "e"
+    options_stripped = options.strip().lower()
+
+
+    if options == 'r':
+     new_username = input("Enter a new username: ")
+     new_password = input("Enter a new password: ")
+     confirm_password = input("Confirm the password: ")
+     
+     if new_password == confirm_password:
+       
+        with open("user.txt", "a") as user_file:
+            user_file.write(f"{new_username}:{new_password}\n")
+        print("User added successfully!")
+    else:
+        print("Passwords do not match. Please try again.")
+       
+     
+def add_task():
+    username = input("Enter the username of the person assigned to the task: ")
+    title = input("Enter the title of the task: ")
+    description = input("Enter the task description: ")
+    due_date = input("Enter the due date (YYYY-MM-DD): ")
+
+    # Validate due_date (optional)
+    try:
+        datetime.datetime.strptime(due_date, "%Y-%m-%d")
+    except ValueError:
+        print("Invalid date format. Please use YYYY-MM-DD.")
+        return
+
+    current_date = datetime.date.today()
+    task_entry = f"{username} | {title} | {description} | {due_date} | No\n"
+
+    with open("task.txt", "a") as file:
+        file.write(task_entry)
+
+    print("Task added successfully!")
+
+# Call the function to add a task
+add_task()
+ 
+if options == 'va':
+      pass
+with open('task.txt', 'a') as file:
+    for line in file:
+        task_name, assigned_user, deadline = line.strip().split(', ')
+        print(f"Task: {task_name}\nAssigned to: {assigned_user}\nDeadline: {deadline}\n")

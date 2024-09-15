@@ -1,0 +1,22 @@
+1.
+a). Data: data are raw facts, such as a telephone number, customer name, or birth date.
+b). Field: a field is a character or group of characters that have a specific meaning. 
+c). Record: a record is a logically connected set of one or more fields that describes a person, place, or thing.
+d). File: a file is a collection of related records.
+
+2.DBMS - is a collection of programs, which works to manage the database structure and control access to the data stored in the database.
+
+Advantages
+
+a). The DBMS allows the data in the database to be shared among multiple applications or users. 
+
+b)  The DBMS integrates many different users’ views of the data into a single data repository.
+
+3.  The difference between data and information is data are raw facts, such as a telephone number, customer name, or birth date and information data are raw facts, 
+    such as a telephone number, customer name, or birth date.
+
+4. Metadata -it is the data that provides information about other data managed within a database environment.
+
+5.
+e) 5 Records.
+f) 4 field per record.

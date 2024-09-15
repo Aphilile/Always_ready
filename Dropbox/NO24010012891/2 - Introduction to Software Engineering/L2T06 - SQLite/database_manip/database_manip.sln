@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "database_manip", "database_manip\database_manip.pyproj", "{36379EEA-D11F-46B0-969C-23D94C9A5D1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36379EEA-D11F-46B0-969C-23D94C9A5D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36379EEA-D11F-46B0-969C-23D94C9A5D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {801D5040-0719-4742-9AC0-E7B1979AE77F}
+	EndGlobalSection
+EndGlobal

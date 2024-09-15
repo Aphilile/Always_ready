@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "award", "award\award.pyproj", "{357D0B1F-1E1F-4D6B-A83A-F8D7131A23C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{357D0B1F-1E1F-4D6B-A83A-F8D7131A23C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357D0B1F-1E1F-4D6B-A83A-F8D7131A23C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E609D57-F58B-4FF2-9267-739A3E0A74A9}
+	EndGlobalSection
+EndGlobal

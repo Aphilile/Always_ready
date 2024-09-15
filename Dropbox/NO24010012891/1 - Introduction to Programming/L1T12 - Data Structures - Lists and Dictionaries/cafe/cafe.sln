@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "cafe", "cafe\cafe.pyproj", "{0BE7B3B4-9FCF-4BB5-A676-3C29B22B4E3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE7B3B4-9FCF-4BB5-A676-3C29B22B4E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE7B3B4-9FCF-4BB5-A676-3C29B22B4E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E78FF1CA-ACE3-4543-BA9F-E3B9AB77CD25}
+	EndGlobalSection
+EndGlobal

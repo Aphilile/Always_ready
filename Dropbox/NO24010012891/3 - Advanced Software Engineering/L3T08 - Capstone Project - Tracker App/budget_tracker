@@ -1,0 +1,315 @@
+import sqlite3
+
+# Connect to SQLite database
+conn = sqlite3.connect('budget_tracker.db')
+c = conn.cursor()
+
+# Create tables
+c.execute('''CREATE TABLE IF NOT EXISTS expense_types (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             name TEXT NOT NULL UNIQUE)''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS expense_categories (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             type_id INTEGER NOT NULL,
+             name TEXT NOT NULL UNIQUE,
+             FOREIGN KEY (type_id) REFERENCES expense_types (id))''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS expenses (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             category_id INTEGER NOT NULL,
+             amount REAL NOT NULL,
+             date TEXT NOT NULL,
+             FOREIGN KEY (category_id) REFERENCES expense_categories (id))''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS income_categories (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             name TEXT NOT NULL UNIQUE)''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS income (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             category_id INTEGER NOT NULL,
+             amount REAL NOT NULL,
+             date TEXT NOT NULL,
+             FOREIGN KEY (category_id) REFERENCES income_categories (id))''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS budgets (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             category_id INTEGER NOT NULL UNIQUE,
+             amount REAL NOT NULL,
+             FOREIGN KEY (category_id) REFERENCES expense_categories (id))''')
+
+c.execute('''CREATE TABLE IF NOT EXISTS financial_goals (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+             description TEXT NOT NULL,
+             target_amount REAL NOT NULL,
+             current_amount REAL NOT NULL)''')
+
+conn.commit()
+
+# Pre-populate data for demonstration purposes
+def prepopulate_data():
+    try:
+        add_expense_type('Food')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_type('Transportation')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_type('Utilities')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(1, 'Groceries')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(1, 'Restaurants')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(2, 'Gas')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(2, 'Public Transport')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(3, 'Electricity')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_expense_category(3, 'Water')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_income_category('Salary')
+    except sqlite3.IntegrityError:
+        pass
+    try:
+        add_income_category('Freelancing')
+    except sqlite3.IntegrityError:
+        pass
+    add_expense(1, 50.0, '2024-07-31')
+    add_expense(2, 25.0, '2024-07-31')
+    add_income(1, 2000.0, '2024-07-31')
+    add_income(2, 500.0, '2024-07-31')
+    set_budget(1, 300.0)
+    set_financial_goal('Emergency Fund', 1000.0)
+
+# Functions to insert data
+def add_expense_type(name):
+    """Insert a new expense type into the database."""
+    c.execute('INSERT INTO expense_types (name) VALUES (?)', (name,))
+    conn.commit()
+
+def add_expense_category(type_id, name):
+    """Insert a new expense category into the database."""
+    c.execute('INSERT INTO expense_categories (type_id, name) VALUES (?, ?)', (type_id, name))
+    conn.commit()
+
+def add_expense(category_id, amount, date):
+    """Insert a new expense into the database."""
+    c.execute('INSERT INTO expenses (category_id, amount, date) VALUES (?, ?, ?)', (category_id, amount, date))
+    conn.commit()
+
+def add_income_category(name):
+    """Insert a new income category into the database."""
+    c.execute('INSERT INTO income_categories (name) VALUES (?)', (name,))
+    conn.commit()
+
+def add_income(category_id, amount, date):
+    """Insert new income into the database."""
+    c.execute('INSERT INTO income (category_id, amount, date) VALUES (?, ?, ?)', (category_id, amount, date))
+    conn.commit()
+
+def set_budget(category_id, amount):
+    """Set or update the budget for a specific category."""
+    try:
+        c.execute('INSERT INTO budgets (category_id, amount) VALUES (?, ?)', (category_id, amount))
+    except sqlite3.IntegrityError:
+        c.execute('UPDATE budgets SET amount = ? WHERE category_id = ?', (amount, category_id))
+    conn.commit()
+
+def set_financial_goal(description, target_amount):
+    """Set a new financial goal."""
+    c.execute('INSERT INTO financial_goals (description, target_amount, current_amount) VALUES (?, ?, 0)', (description, target_amount))
+    conn.commit()
+
+# Functions to retrieve data
+def view_expenses():
+    """Retrieve all expenses."""
+    c.execute('SELECT expenses.id, expense_categories.name, expenses.amount, expenses.date FROM expenses JOIN expense_categories ON expenses.category_id = expense_categories.id')
+    return c.fetchall()
+
+def view_expenses_by_category(category_id):
+    """Retrieve expenses by category."""
+    c.execute('SELECT id, amount, date FROM expenses WHERE category_id = ?', (category_id,))
+    return c.fetchall()
+
+def view_income():
+    """Retrieve all income."""
+    c.execute('SELECT income.id, income_categories.name, income.amount, income.date FROM income JOIN income_categories ON income.category_id = income_categories.id')
+    return c.fetchall()
+
+def view_income_by_category(category_id):
+    """Retrieve income by category."""
+    c.execute('SELECT id, amount, date FROM income WHERE category_id = ?', (category_id,))
+    return c.fetchall()
+
+def view_budget(category_id):
+    """Retrieve the budget for a specific category."""
+    c.execute('SELECT * FROM budgets WHERE category_id = ?', (category_id,))
+    return c.fetchone()
+
+def view_financial_goals():
+    """Retrieve all financial goals."""
+    c.execute('SELECT * FROM financial_goals')
+    return c.fetchall()
+
+# Functions to update and delete data
+def update_expense(expense_id, amount):
+    """Update the amount of a specific expense."""
+    c.execute('UPDATE expenses SET amount = ? WHERE id = ?', (amount, expense_id))
+    conn.commit()
+
+def delete_expense_category(category_id):
+    """Delete an expense category."""
+    c.execute('DELETE FROM expense_categories WHERE id = ?', (category_id,))
+    conn.commit()
+
+def delete_income_category(category_id):
+    """Delete an income category."""
+    c.execute('DELETE FROM income_categories WHERE id = ?', (category_id,))
+    conn.commit()
+
+def update_financial_goal(goal_id, current_amount):
+    """Update the current amount of a financial goal."""
+    c.execute('UPDATE financial_goals SET current_amount = ? WHERE id = ?', (current_amount, goal_id))
+    conn.commit()
+
+# Function to calculate the budget
+def calculate_budget():
+    """Calculate the remaining budget by subtracting total expenses from total income."""
+    c.execute('SELECT SUM(amount) FROM income')
+    total_income = c.fetchone()[0] or 0
+    c.execute('SELECT SUM(amount) FROM expenses')
+    total_expenses = c.fetchone()[0] or 0
+    return total_income - total_expenses
+
+# Menu function
+def menu():
+    prepopulate_data()  # Pre-populate data for demonstration purposes
+    while True:
+        print("\nBudget Tracker Menu")
+        print("1. Add expense type")
+        print("2. Add expense category")
+        print("3. Add expense")
+        print("4. View expenses")
+        print("5. View expenses by category")
+        print("6. Add income")
+        print("7. View income")
+        print("8. View income by category")
+        print("9. Set budget for a category")
+        print("10. View budget for a category")
+        print("11. Set financial goals")
+        print("12. View progress towards financial goals")
+        print("13. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            name = input("Enter expense type name: ")
+            add_expense_type(name)
+        elif choice == '2':
+            c.execute('SELECT * FROM expense_types')
+            types = c.fetchall()
+            for type in types:
+                print(f"ID: {type[0]}, Name: {type[1]}")
+            type_id = int(input("Enter type ID: "))
+            name = input("Enter expense category name: ")
+            add_expense_category(type_id, name)
+        elif choice == '3':
+            c.execute('SELECT * FROM expense_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[2]}")
+            category_id = int(input("Enter category ID: "))
+            amount = float(input("Enter amount: "))
+            date = input("Enter date (YYYY-MM-DD): ")
+            add_expense(category_id, amount, date)
+        elif choice == '4':
+            expenses = view_expenses()
+            for expense in expenses:
+                print(f"ID: {expense[0]}, Category: {expense[1]}, Amount: {expense[2]}, Date: {expense[3]}")
+        elif choice == '5':
+            c.execute('SELECT * FROM expense_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[2]}")
+            category_id = int(input("Enter category ID: "))
+            expenses = view_expenses_by_category(category_id)
+            for expense in expenses:
+                print(f"ID: {expense[0]}, Amount: {expense[1]}, Date: {expense[2]}")
+        elif choice == '6':
+            c.execute('SELECT * FROM income_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[1]}")
+            category_id = int(input("Enter category ID: "))
+            amount = float(input("Enter amount: "))
+            date = input("Enter date (YYYY-MM-DD): ")
+            add_income(category_id, amount, date)
+        elif choice == '7':
+            income = view_income()
+            for inc in income:
+                print(f"ID: {inc[0]}, Category: {inc[1]}, Amount: {inc[2]}, Date: {inc[3]}")
+        elif choice == '8':
+            c.execute('SELECT * FROM income_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[1]}")
+            category_id = int(input("Enter category ID: "))
+            income = view_income_by_category(category_id)
+            for inc in income:
+                print(f"ID: {inc[0]}, Amount: {inc[1]}, Date: {inc[2]}")
+        elif choice == '9':
+            c.execute('SELECT * FROM expense_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[2]}")
+            category_id = int(input("Enter category ID: "))
+            amount = float(input("Enter budget amount: "))
+            set_budget(category_id, amount)
+        elif choice == '10':
+            c.execute('SELECT * FROM expense_categories')
+            categories = c.fetchall()
+            for category in categories:
+                print(f"ID: {category[0]}, Name: {category[2]}")
+            category_id = int(input("Enter category ID: "))
+            budget = view_budget(category_id)
+            if budget:
+                print(f"Category ID: {budget[1]}, Amount: {budget[2]}")
+            else:
+                print("No budget set for this category.")
+        elif choice == '11':
+            description = input("Enter goal description: ")
+            target_amount = float(input("Enter target amount: "))
+            set_financial_goal(description, target_amount)
+        elif choice == '12':
+            goals = view_financial_goals()
+            for goal in goals:
+                print(f"ID: {goal[0]}, Description: {goal[1]}, Target Amount: {goal[2]}, Current Amount: {goal[3]}")
+        elif choice == '13':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+# Run the menu
+menu()
+
+# Close the database connection at the end of the program
+conn.close()

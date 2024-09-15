@@ -1,0 +1,11 @@
+ def show_course_id(self):
+        print(f"Course ID: #{self.course_id}")
+
+
+# Create an object of the subclass
+course_1 = OOPCourse(course_id=12345, name="Object-Oriented Programming")
+
+# Call the methods
+course_1.contact_details()
+course_1.trainer_details()
+course_1.show_course_id()

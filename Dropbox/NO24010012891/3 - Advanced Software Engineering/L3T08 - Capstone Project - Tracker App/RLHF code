@@ -1,0 +1,31 @@
+import numpy as np
+import random
+
+# Example of a simple reward model function
+def reward_function(response):
+    # Define how rewards are calculated based on the response
+    # This is a placeholder function
+    if "good" in response:
+        return 1.0  # Positive reward
+    else:
+        return 0.0  # No reward
+
+# Simulated model training with RLHF
+def train_model_with_rlhf(model, num_iterations):
+    for _ in range(num_iterations):
+        response = model.generate_response()  # Model generates a response
+        reward = reward_function(response)    # Human feedback via reward function
+        model.update_parameters(reward)        # Update model parameters based on reward
+
+# Placeholder model class
+class SimpleModel:
+    def generate_response(self):
+        return random.choice(["good response", "bad response"])
+
+    def update_parameters(self, reward):
+        # Placeholder for updating model parameters
+        pass
+
+# Example usage
+model = SimpleModel()
+train_model_with_rlhf(model, num_iterations=10)

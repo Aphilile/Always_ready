@@ -1,0 +1,74 @@
+
+1. Why do you think incremental development is the most effective approach for developing business software systems?
+Incremental development is effective for business software systems because it allows for the system to be built and delivered in small, manageable sections. This approach provides several benefits:
+- **Early Delivery**: Parts of the system can be delivered and used earlier, providing immediate value to the business.
+- **Flexibility**: Changes can be made after each increment, making it easier to adapt to new requirements or feedback.
+- **Risk Management**: Risks can be identified and addressed earlier since each increment is tested and reviewed before moving on.
+- **User Feedback**: Early and continuous user feedback ensures that the final system meets the actual needs of users.
+- **Improved Quality**: Continuous integration and testing improve the overall quality of the software.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
+
+2. Why do you think it is necessary to have two separate requirements engineering steps in the reuse-oriented software engineering process?
+In the reuse-oriented software engineering process, it is necessary to have two separate requirements engineering steps for the following reasons:
+- **Initial Requirements Definition**: The first step focuses on gathering and defining the high-level requirements of the system. This involves understanding the business needs, objectives, and constraints, and identifying the essential features and functionalities required by the users.
+- **Component Matching and Adaptation**: The second step occurs after identifying reusable components. Here, the requirements are refined and detailed to match the available components. This involves adapting the initial requirements to align with the capabilities and limitations of the existing components, ensuring that they can be effectively integrated into the system.
+
+Having two separate steps ensures that the initial requirements are comprehensive and accurately capture the user's needs while also allowing for the practical considerations of reusing existing components. This approach minimizes the gap between what is desired and what is feasible, leading to a more efficient and cost-effective development process.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
+
+3. Suggest which generic software model will be most appropriate for the development of the following systems. Give reasons for your answer.
+
+i). A system to control anti-lock braking in a car
+The most appropriate software model for this system is the **V-Model**. The V-Model is suitable because it emphasizes verification and validation. For a safety-critical system like anti-lock braking, it's crucial to have thorough testing at each stage of development to ensure reliability and safety.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+
+ii). A virtual reality system to support software maintenance
+The **Incremental Model** would be most appropriate for this system. Virtual reality systems are complex and often require iterative development to refine the user experience and functionality. The incremental model allows for parts of the system to be developed and tested in increments, providing flexibility and the ability to incorporate feedback early and often.
+
+*References:*
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
+
+iii). A university accounting system that replaces an existing system
+The **Spiral Model** is well-suited for this project. The spiral model combines iterative development with systematic aspects of the waterfall model, making it ideal for handling risks and ensuring thorough refinement through multiple iterations. This is beneficial for replacing an existing system where understanding existing issues and gradual integration is key.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+
+iv). An interactive travel planning system that helps users plan trips with the lowest environmental impact
+The **Agile Model** would be most appropriate for this system. Agile development is suited for projects that require flexibility and quick adaptation to changing user requirements and feedback. Given that environmental impact and travel preferences can vary widely, an agile approach allows for continuous improvement and the incorporation of user feedback to refine the system effectively.
+
+*References:*
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
+
+4. Which generic software model is most appropriate for the following systems? Provide reasons for your choice.
+i). A system to control anti-lock braking in a car
+The most appropriate software model for this system is the **Waterfall Model**. The Waterfall Model is suitable because it provides a structured and sequential approach to development, which is critical for safety-critical systems. Each phase must be completed before the next one begins, ensuring thorough verification and validation.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+
+ii). A virtual reality system to support software maintenance
+The **Incremental Development Model** would be most appropriate for this system. Virtual reality systems are complex and often require iterative development to refine the user experience and functionality. The incremental model allows for parts of the system to be developed and tested in increments, providing flexibility and the ability to incorporate feedback early and often.
+
+*References:*
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
+
+iii). A university accounting system that replaces an existing system
+The **Reuse-Oriented Software Engineering Model** is well-suited for this project. Reuse-oriented development emphasizes the use of existing software components, which can speed up development and reduce costs. This is beneficial for replacing an existing system where leveraging existing components can help ensure a smooth transition and integration.
+
+*References:*
+- Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson.
+
+iv). An interactive travel planning system that helps users plan trips with the lowest environmental impact
+The **Agile Model** would be most appropriate for this system. Agile development is suited for projects that require flexibility and quick adaptation to changing user requirements and feedback. Given that environmental impact and travel preferences can vary widely, an agile approach allows for continuous improvement and the incorporation of user feedback to refine the system effectively.
+
+*References:*
+- Pressman, R. S. (2014). *Software Engineering: A Practitioner's Approach* (8th ed.). McGraw-Hill Education.
